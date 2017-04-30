@@ -78,10 +78,10 @@
         <div class="row">
             <div class="col-8 ">
                 <div class="slider_conteiner">
-                    <a href="#" class="arrow arrow_left"><img src="images/iconleft.png" alt="slider arrow left"/></a>
-                    <a href="#" class="arrow arrow_right"><img src="images/iconright.png" alt="slider arrow right"/></a>
+                    <a href="#" id="arrow_left" class="arrow arrow_left"><img src="images/iconleft.png" alt="slider arrow left"/></a>
+                    <a href="#" id="arrow_right"  class="arrow arrow_right"><img src="images/iconright.png" alt="slider arrow right"/></a>
 
-                    <div class="slider">
+                    <div id="slider" class="slider">
                         <div class="slider_item">
                             <img src="images/slider1.png" alt="Перфораторы - Настроящие мужские игрушки"
                                  class="img_bg_slider">
@@ -101,10 +101,32 @@
                             </div>
                             <button class="btn_red slider_button">Открыть каталог</button>
                         </div>
+                        <div class="slider_item">
+                            <img src="images/slider1.png" alt="Перфораторы - Настроящие мужские игрушки"
+                                 class="img_bg_slider">
+
+                            <div class="slider_info">
+                                <span>Перфораторы2</span>
+                                <p>Настроящие мужские игрушки</p>
+                            </div>
+                            <button class="btn_red slider_button">Открыть каталог</button>
+                        </div>
+                        <div class="slider_item">
+                            <img src="images/slider2.png" alt="Дрели - Соседям на радость!" class="img_bg_slider">
+
+                            <div class="slider_info">
+                                <span>Дрели2</span>
+                                <p>Соседям на радость!</p>
+                            </div>
+                            <button class="btn_red slider_button">Открыть каталог</button>
+                        </div>
                     </div>
                     <ul id="pagination">
-                        <li><a href="#slider_item_1" class="active">1</a></li>
-                        <li><a href="#slider_item_2">2</a></li>
+                        <li class="pagin active">1</li>
+                        <li class="pagin">2</li>
+                        <li class="pagin">3</li>
+                        <li class="pagin">4</li>
+
                     </ul>
                     <div class="slider_parination"></div>
                 </div>
@@ -132,27 +154,43 @@
                 </div>
 
         </div>
-        <div class="row product">
-            <div class="col-3 ">
+        <div id="product" class="row product">
+            <div class="col-3 product_item box" id="0" onmouseover="hover_product(0, 'hover')" onmouseout="out_product(0, 'out')">
                 <div class="img_wrap"><img src="images/BFG9000.png" alt="Перфоратор"></div>
+                <div class="button_wrap">
+                    <button class="btn_green buy"><img class="img_icon basket" src="images/icon-basket.png">КУПИТЬ</button>
+                    <button class="btn_green">В закладки</button>
+                </div>
                 <div class="title_product">Перфоратор BOSCH BFG 9000</div>
                 <div class="old_price">32500 P.</div>
                 <div class="new_price">25500 P.</div>
             </div>
-            <div class="col-3">
+            <div class="col-3 product_item box" id="1"  onmouseover="hover_product(1, 'hover')" onmouseout="out_product(1, 'out')">
                 <div class="img_wrap"><img src="images/BFG3000.png" alt="Перфоратор"></div>
+                <div class="button_wrap">
+                    <button class="btn_green buy"><img class="img_icon basket" src="images/icon-basket.png">КУПИТЬ</button>
+                    <button class="btn_green">В закладки</button>
+                </div>
                 <div class="title_product">Перфоратор BOSCH BFG 3000</div>
                 <div class="old_price">22500 P.</div>
                 <div class="new_price">15500 P.</div>
             </div>
-            <div class="col-3">
+            <div class="col-3 product_item box" id="2"  onmouseover="hover_product(2, 'hover')" onmouseout="out_product(2, 'out')">
                 <div class="img_wrap"><img src="images/BFG6000.png" alt="Перфоратор"></div>
+                <div class="button_wrap">
+                    <button class="btn_green buy"><img class="img_icon basket" src="images/icon-basket.png">КУПИТЬ</button>
+                    <button class="btn_green">В закладки</button>
+                </div>
                 <div class="title_product">Перфоратор BOSCH BFG 6000</div>
                 <div class="old_price">30500 P.</div>
                 <div class="new_price">25500 P.</div>
             </div>
-            <div class="col-3">
+            <div class="col-3 product_item box"  id="3"  onmouseover="hover_product(3, 'hover')" onmouseout="out_product(3, 'out')">
                 <img src="images/newflag.png" class="promo_new product" alt="Новинка">
+                <div class="button_wrap">
+                    <button class="btn_green buy"><img class="img_icon basket" src="images/icon-basket.png">КУПИТЬ</button>
+                    <button class="btn_green">В закладки</button>
+                </div>
                 <div class="img_wrap"><img src="images/BFG6000.png" alt="Перфоратор"></div>
                 <div class="title_product">Перфоратор BOSCH BFG 2000</div>
                 <div class="old_price"></div>
@@ -164,7 +202,7 @@
                 <h2>Популярные производители:</h2>
             </div>
 
-            <div class="col-4">
+            <div class="col-4 product_item">
                 <button class="btn_red all_popular">все производители</button>
             </div>
         </div>
@@ -202,26 +240,42 @@
         <div class="row">
             <div class="col-12 services_info">
             <h2>Сервисы</h2>
-
             <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>
                 Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
             </div>
         </div>
         <div class="row services_tab">
             <div class="col-4">
-                <ul>
-                    <li><a href="#" class="active">Доставка</a></li>
-                    <li><a href="#">Гарантия</a></li>
-                    <li><a href="#">Кредит</a></li>
+                <ul class="tab">
+                    <li><a href="#"  class="tablinks active" onclick="openServices(event, 'Dostavka')" class="active">Доставка</a></li>
+                    <li><a href="#"  class="tablinks" onclick="openServices(event, 'Garantiya')">Гарантия</a></li>
+                    <li><a href="#"  class="tablinks" onclick="openServices(event, 'Kredit')">Кредит</a></li>
                 </ul>
             </div>
             <div class="col-8 content">
+                <div id="Dostavka" class="tabcontent">
                 <h3>Доставка</h3>
                 <p> Мы с удовольствием доставим ваш товар прямо<br>
                     к вашему подъезду совершенно бесплатно!<br>
                     Ведь мы неплохо заработаем,<br>
                     поднимая его на ваш этаж! </p>
                     <img src="images/truck.png"  class="bg_tab" alt="services car">
+                </div>
+                <div id="Garantiya" class="tabcontent">
+                    <h3>Гарантия</h3>
+                    <p> Если купленный у нас товар поломается или заискрит,<br>
+                        а также в случае пожара, спровоцированного его возгаранием,  <br>
+                        вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.
+                        <br>Дом уж восстановите как-нибудь сами.</p>
+                    <img src="images/garanty.png"  class="bg_tab" alt="services car">
+                </div>
+                <div id="Kredit" class="tabcontent">
+                    <h3>Кредит</h3>
+                    <p> Залезть в долговую яму стало проще!<br>
+                        Кредитные консультанты придут вам на помощь. </p>
+                        <button class="btn_red">ОТПРАВИТЬ ЗАЯВКУ</button>
+                    <img src="images/kredit.png"  class="bg_tab" alt="services car">
+                </div>
             </div>
         </div>
     </div>
@@ -233,15 +287,11 @@
         <div class="row">
             <div class="col-8">
                 <h2>КОМПАНИЯ «Техномарт»</h2>
-
-                <p>
-                    Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не
-                    оставит равнодушными любителей сэкномить на гастарбайтерах.
+                <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не
+                   оставит равнодушными любителей сэкномить на гастарбайтерах.
                 </p>
-
-                <p>
-                    Мы можем доставить ваш товар в самые отдаленные точки России!<br>
-                    Техномарт работает со многими транспортными компаниями:
+                <p>Мы можем доставить ваш товар в самые отдаленные точки России!<br>
+                   Техномарт работает со многими транспортными компаниями:
                 </p>
                 <ul class="contact_info_ul">
                     <li>Деловые линии</li>

@@ -442,12 +442,24 @@ nav li a:active, nav li a:focus, nav li a.active {
     height: 266px;
     position: relative;
 }
+.slider{
+    /*margin-left: -1860px;*/
+    width: 2480px;
+    /*height: 266px;*/
+    clear: both;
+    -webkit-transition: all ease 1s;
+    -moz-transition: all ease 1s;
+    -ms-transition: all ease 1s;
+    -o-transition: all ease 1s;
+    transition: all ease 1s;
+
+}
 .slider_item{
     position: relative;
     height: 266px;
     float: left;
-    width: 100%;
-    color: #ffffff;
+    width: 620px;
+    color: #ffffff;transition: all 2ms;
 }
 
 .slider_item img{
@@ -518,8 +530,7 @@ nav li a:active, nav li a:focus, nav li a.active {
     float:left;
     margin:0 5px;
 }
-
-#pagination li a {
+#pagination li {
     display:block;
     width:10px;
     height:10px;
@@ -530,11 +541,28 @@ nav li a:active, nav li a:focus, nav li a.active {
     -webkit-border-radius: 10px;
 }
 
-#pagination li a.active {
+#pagination li.active {
     background: #ee3643;
     border: 2px solid #fff;
 
 }
+
+/*#pagination li a {*/
+    /*display:block;*/
+    /*width:10px;*/
+    /*height:10px;*/
+    /*text-indent:-10000px;*/
+    /*background: #fff;*/
+    /*border-radius: 10px;*/
+    /*-moz-border-radius: 10px;*/
+    /*-webkit-border-radius: 10px;*/
+/*}*/
+
+/*#pagination li a.active {*/
+    /*background: #ee3643;*/
+    /*border: 2px solid #fff;*/
+
+/*}*/
 .row.popular{
     color: #32425c;
     font-size: 30px;
@@ -568,9 +596,78 @@ nav li a:active, nav li a:focus, nav li a.active {
     height: 164px;
     line-height: 164px;
     text-align: center;
+    display: block;
+}
+.product_item.box.hover .img_wrap{
+    display: none;
+}
+.product_item.box.out .img_wrap{
+    display: block;
+}
+.product_item.box.hover .button_wrap{
+    display: block;
+}
+.product_item.box.out  .button_wrap{
+    display: none;
+}
+.product .button_wrap{
+    height: 164px;
+    display: none;
 }
 .product .img_wrap img{
    vertical-align: middle;
+}
+.button_wrap{
+    text-align: center;
+    padding-top: 44px;
+}
+.btn_green{
+    margin: 7px auto 0;
+    text-align: center;
+    width: 135px;
+    height: 38px;
+    border: 3px solid #63a63e;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #32425c;
+    font-family: 'cuprum', sans-serif;
+}
+.btn_green:hover{
+    border: 3px solid #32425c;
+}
+.btn_green:active, .btn_red:focus{
+    border: 3px solid #32425c;
+    opacity: 0.3;
+}
+.btn_green.buy{
+    box-shadow: inset 0 -3px 0 #367315;
+    background-color: #63a63e;
+    border: none;
+    color: #ffffff;
+    position: relative;
+}
+.btn_green.buy:hover{
+    box-shadow: inset 0 -3px 0 #367315;
+    background-color: #5fbb2d;
+}
+.btn_green.buy:active, .btn_red.buy:focus{
+    background-color: #518534;
+    box-shadow:none;
+    opacity: 1;
+}
+.btn_green.buy .img_icon.basket{
+    opacity: 0.3;
+    position: absolute;
+    left: 12px;
+}
+.btn_green.buy:hover .img_icon.basket{
+    opacity: 1;
+}
+.btn_green.buy:active .img_icon.basket, .btn_red.buy:focus .img_icon.basket{
+    opacity: 1;
 }
 .title_product{
     color: #000000;
@@ -703,10 +800,14 @@ h2{
 .services_tab ul li a.active {
     background-color: white;
     color: #32425c;
+
+}
+.services_tab ul li a.active:last-child{
+    box-shadow: inset 0 -1px 0 white;
 }
 .services_tab ul li a.active:hover{
-    background-color: #293449;
-    color: #ffffff;
+    background-color: white;
+    color: #32425c;
 }
 .services_tab ul li a:hover{
     background-color: #293449;
@@ -715,7 +816,11 @@ h2{
 .services_tab .content {
     padding: 52px 0;
 }
-
+.services_tab .content p {
+    max-width: 380px;
+    z-index: 2;
+    position: relative;
+}
 .services_tab .content h3{
     color: #32425c;
     font-size: 36px;
@@ -723,7 +828,18 @@ h2{
     font-family: 'cuprum', sans-serif;
     margin-bottom: 32px;
 }
-
+ul.tab {
+    overflow: hidden;
+}
+.tabcontent {
+    display: none;
+}
+.tabcontent:first-child{
+    display: block;
+}
+.tabcontent .btn_red{
+    margin-top: 40px;
+}
 .contact_info{
     padding-top: 82px;
     padding-bottom: 86px;
