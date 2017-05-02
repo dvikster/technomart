@@ -4,7 +4,7 @@ var arrowLeft = document.getElementById("arrow_left");
 var arrowRight = document.getElementById("arrow_right");
 var moveSlider = document.getElementsByClassName("slider")[0];
 
-arrowLeft.onclick = function(event) {
+arrowLeft.onclick = function (event) {
     event.preventDefault();
     if (stepMove == 0) {
 
@@ -14,7 +14,7 @@ arrowLeft.onclick = function(event) {
     }
     moveSlider.style.marginLeft = stepMove + "px";
 };
-arrowRight.onclick = function(event) {
+arrowRight.onclick = function (event) {
     event.preventDefault();
     if (stepMove == -1860) {
 
@@ -27,7 +27,7 @@ arrowRight.onclick = function(event) {
 
 
 // как это уменьшить и сделать правильно - и это не пагинация, а индикация слайдеров
-function pagination() {
+function pagination (){
     if (stepMove == 0) {
         document.getElementsByClassName("pagin")[1].classList.remove("active");
         document.getElementsByClassName("pagin")[2].classList.remove("active");
