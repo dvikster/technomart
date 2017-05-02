@@ -4,28 +4,26 @@ var arrowLeft = document.getElementById("arrow_left");
 var arrowRight = document.getElementById("arrow_right");
 var moveSlider = document.getElementsByClassName("slider")[0];
 
-arrowLeft.onclick = function () {
+arrowLeft.onclick = function(event) {
     event.preventDefault();
     if (stepMove == 0) {
 
-    }
-    else {
+    } else {
         stepMove = stepMove + 620;
         pagination();
     }
     moveSlider.style.marginLeft = stepMove + "px";
-}
-arrowRight.onclick = function () {
+};
+arrowRight.onclick = function(event) {
     event.preventDefault();
     if (stepMove == -1860) {
 
-    }
-    else {
+    } else {
         stepMove = stepMove - 620;
         pagination();
     }
     moveSlider.style.marginLeft = stepMove + "px";
-}
+};
 
 
 // как это уменьшить и сделать правильно - и это не пагинация, а индикация слайдеров
@@ -67,7 +65,7 @@ function out_product(id, out) {
 
 
 // -  нашла такой код - было интересно испробывать для табов https://www.w3schools.com/howto/howto_js_tabs.asp
-function openServices(evt, servName) {
+function openServices(event, servName) {
     event.preventDefault();
 
     // Declare all variables
@@ -87,27 +85,27 @@ function openServices(evt, servName) {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(servName).style.display = "block";
-    evt.currentTarget.className += " active";
+    event.currentTarget.className += " active";
 }
 
 
-document.getElementById('map_popup').onclick = function () {
+document.getElementById('map_popup').onclick = function (event) {
     event.preventDefault();
     document.getElementsByClassName("map_popup")[0].style.display = 'block';
 }
 
-document.getElementById('close_map').onclick = function () {
+document.getElementById('close_map').onclick = function (event) {
     event.preventDefault();
     document.getElementsByClassName("map_popup")[0].style.display = 'none';
 }
 
 
-document.getElementById('write_us').onclick = function () {
+document.getElementById('write_us').onclick = function (event) {
     event.preventDefault();
     document.getElementsByClassName("write_us_block")[0].style.display = 'block';
 }
 
-document.getElementById('close_write_us').onclick = function () {
+document.getElementById('close_write_us').onclick = function (event) {
     event.preventDefault();
     document.getElementsByClassName("write_us_block")[0].style.display = 'none';
 }
