@@ -1,27 +1,26 @@
-
 //slider
 var stepMove = 0;
-var aroowLeft = document.getElementById("arrow_left");
-var aroowRight = document.getElementById("arrow_right");
+var arrowLeft = document.getElementById("arrow_left");
+var arrowRight = document.getElementById("arrow_right");
 var moveSlider = document.getElementsByClassName("slider")[0];
 
-aroowLeft.onclick =  function(){
+arrowLeft.onclick = function () {
     event.preventDefault();
-    if( stepMove == 0){
+    if (stepMove == 0) {
 
     }
-    else{
+    else {
         stepMove = stepMove + 620;
         pagination();
     }
     moveSlider.style.marginLeft = stepMove + "px";
 }
-aroowRight.onclick =  function(){
+arrowRight.onclick = function () {
     event.preventDefault();
-    if( stepMove == -1860){
+    if (stepMove == -1860) {
 
     }
-    else{
+    else {
         stepMove = stepMove - 620;
         pagination();
     }
@@ -29,29 +28,27 @@ aroowRight.onclick =  function(){
 }
 
 
-
-
 // как это уменьшить и сделать правильно - и это не пагинация, а индикация слайдеров
-function pagination(){
-    if(stepMove == 0 ){
+function pagination() {
+    if (stepMove == 0) {
         document.getElementsByClassName("pagin")[1].classList.remove("active");
         document.getElementsByClassName("pagin")[2].classList.remove("active");
         document.getElementsByClassName("pagin")[3].classList.remove("active");
         document.getElementsByClassName("pagin")[0].classList.add("active");
     }
-    else if(stepMove ==  -620){
+    else if (stepMove == -620) {
         document.getElementsByClassName("pagin")[0].classList.remove("active");
         document.getElementsByClassName("pagin")[2].classList.remove("active");
         document.getElementsByClassName("pagin")[3].classList.remove("active");
         document.getElementsByClassName("pagin")[1].classList.add("active");
     }
-    else if(stepMove == -1240){
+    else if (stepMove == -1240) {
         document.getElementsByClassName("pagin")[0].classList.remove("active");
         document.getElementsByClassName("pagin")[1].classList.remove("active");
         document.getElementsByClassName("pagin")[3].classList.remove("active");
         document.getElementsByClassName("pagin")[2].classList.add("active");
     }
-    else if(stepMove == -1860){
+    else if (stepMove == -1860) {
         document.getElementsByClassName("pagin")[0].classList.remove("active");
         document.getElementsByClassName("pagin")[1].classList.remove("active");
         document.getElementsByClassName("pagin")[2].classList.remove("active");
@@ -59,12 +56,12 @@ function pagination(){
     }
 }
 
-// - по аналогии как в крестиках ноликах, должен біть вариант по проще
+// - по аналогии как в крестиках ноликах, должен быть вариант по проще
 function hover_product(id, hover) {
     document.getElementById(id).className = 'col-3 product_item box ' + hover;
 }
 
-function out_product(id, out){
+function out_product(id, out) {
     document.getElementById(id).className = 'col-3 product_item box ' + out;
 }
 
@@ -91,4 +88,26 @@ function openServices(evt, servName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(servName).style.display = "block";
     evt.currentTarget.className += " active";
+}
+
+
+document.getElementById('map_popup').onclick = function () {
+    event.preventDefault();
+    document.getElementsByClassName("map_popup")[0].style.display = 'block';
+}
+
+document.getElementById('close_map').onclick = function () {
+    event.preventDefault();
+    document.getElementsByClassName("map_popup")[0].style.display = 'none';
+}
+
+
+document.getElementById('write_us').onclick = function () {
+    event.preventDefault();
+    document.getElementsByClassName("write_us_block")[0].style.display = 'block';
+}
+
+document.getElementById('close_write_us').onclick = function () {
+    event.preventDefault();
+    document.getElementsByClassName("write_us_block")[0].style.display = 'none';
 }
