@@ -54,14 +54,21 @@ function pagination (){
     }
 }
 
-// - по аналогии как в крестиках ноликах, должен быть вариант по проще
-function hover_product(id, hover) {
-    document.getElementById(id).className = 'col-3 product_item box ' + hover;
+
+// смена блока на ховер для продуктов
+var product= document.getElementsByClassName('col-3 product_item box');
+
+for(var i=0; i<product.length; i++){
+    product[i].onmouseover = productHover;
+    product[i].onmouseout = productOut;
+}
+function productHover(){
+    this.className = 'col-3 product_item box hover';
+}
+function productOut(){
+    this.className = 'col-3 product_item box out';
 }
 
-function out_product(id, out) {
-    document.getElementById(id).className = 'col-3 product_item box ' + out;
-}
 
 
 // -  нашла такой код - было интересно испробывать для табов https://www.w3schools.com/howto/howto_js_tabs.asp
